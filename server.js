@@ -13,6 +13,10 @@ app.use(cors());
 app.use(bodyParser.json());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// serving static files
+app.use('/uploads', express.static('uploads'));
+
 // handle storage using multer
 var storage = multer.diskStorage({
 	destination: function (req, file, cb) {
